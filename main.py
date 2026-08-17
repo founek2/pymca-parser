@@ -163,7 +163,7 @@ def process_fit_files(input_dir: Path, recursive: bool = False, elements: list[t
 		summary_df = pd.DataFrame(summary_rows, columns=SUMMARY_COLUMNS)
 		summary_df = summary_df.sort_values(["element", "group", "sample"], ascending=[True, True, True], kind="stable")
 		summary_path = input_dir / "output.csv"
-		summary_df.to_csv(summary_path, index=False, decimal=",")
+		summary_df.to_csv(summary_path, index=False, decimal=".", sep=";")
 		print(f"Saved: {summary_path}")
 
 	print(f"Done. Processed {processed} file(s).")
